@@ -1,0 +1,40 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 78, in script
+    show saban kissing with pixellate:
+IOError: Couldn't find file 'audio/hababam'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 78, in script
+    show saban kissing with pixellate:
+  File "renpy/ast.py", line 1397, in execute
+    renpy.exports.with_statement(trans, paired)
+  File "renpy/exports.py", line 1646, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "renpy/display/core.py", line 2610, in do_with
+    clear=clear)
+  File "renpy/display/core.py", line 3101, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 3794, in interact_core
+    renpy.audio.audio.periodic()
+  File "renpy/audio/audio.py", line 1101, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "renpy/audio/audio.py", line 1079, in periodic_thread_main
+    periodic_pass()
+  File "renpy/audio/audio.py", line 1021, in periodic_pass
+    c.periodic()
+  File "renpy/audio/audio.py", line 487, in periodic
+    topf = load(self.file_prefix + filename + self.file_suffix)
+  File "renpy/audio/audio.py", line 69, in load
+    rv = renpy.loader.load(fn)
+  File "renpy/loader.py", line 798, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'audio/hababam'.
+
+Windows-10-10.0.19041
+Ren'Py 7.4.4.1439
+visual_novel_demo 1.0
+Thu May 13 18:03:37 2021
